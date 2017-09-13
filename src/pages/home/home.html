@@ -1,0 +1,32 @@
+<!-- <ion-header>
+  <ion-navbar>
+    <ion-title>首页</ion-title>
+  </ion-navbar>
+</ion-header> -->
+
+<ion-content>
+
+  <!-- <div class="slide-banner">
+    <ion-slides loop="true" pager="true" parallax="true" (ionSlideDidChange)="slideChanged()">
+      <ion-slide *ngFor="let image of [1,2,3,4,5]">
+        <img data-src="http://ionicframework.com/docs/demos/src/slides/www/assets/slide{{image}}.jpeg">
+      </ion-slide>
+    </ion-slides>
+  </div> -->
+  <!-- <ion-grid>
+    <ion-col style="border:1px solid red;" col-12>
+        <img src="http://alpha.zhujia100.com/static/img/logo.png" alt="">
+    </ion-col>
+    <ion-col col-12 style="border:1px solid blue;">
+        <ion-input type="text" placeholder="请输入关键词"></ion-input>
+    </ion-col>
+  </ion-grid> -->
+
+  <ion-list>
+    <ion-item *ngFor="let i of items" (click)="pushEvent(i)" [navPush]="pushPage" [navParams]="params">{{i}}</ion-item>
+  </ion-list>
+
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
+</ion-content>
